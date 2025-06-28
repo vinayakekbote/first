@@ -1,9 +1,10 @@
-package com.first;
+package com.first.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,6 +19,7 @@ public class Student {
     private int id;
 
     @Column(name = "name")
+    @NotBlank(message = "Name is required")
     private String name;
 
     public Student() {
